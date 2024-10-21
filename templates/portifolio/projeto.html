@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <section id="project-hero" class="section-p1">
+
+    <img src="{{ project.imagehero.url }}" alt="">
+
+    <div class="text">
+      <h4>{{ project.desc }}</h4>
+      <h1>{{ project.title }}</h1>
+    </div>
+
+  </section>
+
+  <section id="project" class="section-p1">
+
+    <div class="estatic-colun">
+
+      <div class="cliente">
+        <h4>Cliente</h4>
+        <h4>{{ project.title }}</h4>
+      </div>
+
+      <div class="area">
+        <h4>Área</h4>
+        <h4>{{ project.desc }}</h4>
+      </div>
+
+      <div class="about">
+        <h4>Sobre o Projeto</h4>
+        <p>{{ project.about }}</p>
+      </div>
+
+      <div class="feedback">
+        <p>{{ project.feedback }}</p>
+        <div class="profile">
+          <img src="{{ project.imageprofile.url }}" alt="">
+          <div class="text">
+            <p>{{ project.name }}</p>
+            <p>{{ project.title }}</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="button">Falar Comigo</button>
+
+    </div>
+
+    <div class="roll-colun">
+      <img src="{% static "portifolio/img/2effe-pro.png" %}" alt="">
+    </div>
+
+  </section>
+
+{% endblock content %}

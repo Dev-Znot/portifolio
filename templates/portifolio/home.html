@@ -1,0 +1,133 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <nav class="section-p1">
+
+    <ul>
+      
+      <img src="{% static "/portifolio/img/logo.png" %}" alt="logo.png">
+      <li>SOBRE</li>
+      <li>PROJETOS</li>
+      <li>CONTATO</li>
+
+    </ul>
+
+  </nav>
+
+  <section id="hero" class="section-p1">
+
+    <img src="{% static "Portifolio/img/hero.png" %}" class="" alt="">
+
+      <div class="hero-content">
+        <h4>OUR VERSION</h4>
+        <h1>ENGENHEIRO DE SOFTWARE</h1>
+        <p>Um pouco dos meus trabalhos de forma mais prática de se navegar e visualizar. Buscando sempre otimizar o tempo.</p>
+        <div class="wrapper">
+          <div class="ld-ripple">
+            <div></div>
+            <div></div>
+          </div>
+          <h3>Veja mais</h3>
+        </div>
+      </div>
+
+  </section>
+
+  <section id="about" class="section-p1">
+
+      <div class="text">
+
+        <h4>SOBRE MIM</h4>
+        <h1>SOU ENGENHEIRO DE SOFTWARE</h1>
+        <p>Programar pra mim funciona muito bem, porque eu sou dês de muito pequeno uma pessoa muito logica, sei analisar um problema desmebra-lo e montar por partes com a solução adquadas</p>
+        <p>Não é atual que sempre me dei muito bem com numeros, simplesmente porque eu vejo muita logica no funcionamento deles. Uma qualidade minha concerteza é a persistencia sinto-me imparavel para criar e resolver coisas, uma negativa sou um pouco desatento nos detalhes e isso volta e meia me custa caro.</p>
+
+      </div>
+
+      <img src="{% static "Portifolio/img/about.png" %}" alt="">
+
+  </section>
+
+  <section id="learn" class="section-m1">
+
+    <div class="main">
+      <h1>3</h1>
+      <h4>Anos de Experiência</h4>
+    </div>
+
+    <div class="rule">
+
+      <div class="box">
+        <h2>2+</h2>
+        <h4>Clientes</h4>
+      </div>
+
+      <div class="box">
+        <h2>20+</h2>
+        <h4>Projetos Completos</h4>
+      </div>
+
+      <div class="box">
+        <h2>114</h2>
+        <h4>Open Sorces</h4>
+      </div>
+      
+      <div class="box">
+        <h2>5000+</h2>
+        <h4>Horas De Código</h4>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="feat" class="section-p1">
+
+    <div class="info">
+      <p><i class="fa-solid fa-circle-notch"></i> Trabalhos selecionados</p>
+    </div>
+
+    <div class="all-cards">
+
+      {% for project in projects %}
+
+        <div class="card">
+          <img src="{{ project.imagehero.url }}" alt="">
+          <div class="line">
+            <h3>{{ project.title }}</h3>
+            <button class="cta">
+              <span class="hover-underline-animation"> <a href="{% url "portifolio:projeto" pk=project.pk  %}">Ver projeto</a> </span>
+            </button>
+          </div>
+          <p>{{ project.desc }}</p>
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="section-m1">
+
+    <div class="main">
+
+      <div class="text-left">
+        <h2>Onde me encontrar?</h2>
+        <p>Se você apreciou meu trabalho ou minha persona e deseja entrar em contato.</p>
+        <p>redes sociais no rodapé do site</p>
+      </div>
+
+      <button class="button">Entrar em Contato</button>
+
+    </div>
+
+  </section>
+
+{% endblock content %}
+
+
+      
